@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial - Escola Terra Brasil</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- CONFIGURAÇÕES GERAIS --- */
+        :root {
+            --bg-color: #0f172a; 
+            --glass-bg: rgba(30, 41, 59, 0.75); 
+            --card-bg: rgba(51, 65, 85, 0.4); 
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --highlight: #38bdf8; /* Azul Neon */
+            --danger: #f87171;    /* Vermelho suave para limitações */
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at 50% 0%, #1e293b 0%, var(--bg-color) 80%);
+            margin: 0;
+            padding: 20px;
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* --- CONTAINER PRINCIPAL --- */
+        .main-wrapper {
+            width: 100%;
+            max-width: 900px;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- CABEÇALHO --- */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 30px;
+        }
+
+        .brand {
+            color: var(--highlight);
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 25px 0;
+            line-height: 1.2;
+            text-shadow: 0 0 20px rgba(56, 189, 248, 0.2);
+        }
+
+        .info-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.05);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border: 1px solid var(--glass-border);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tag i { color: var(--highlight); }
+
+        /* --- TÍTULOS --- */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 70px;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,255,255,0.03);
+        }
+
+        .section-title h2 {
+            font-size: 1.4rem;
+            margin: 0;
+            color: white;
+            font-weight: 600;
+        }
+
+        .icon-box {
+            background: rgba(56, 189, 248, 0.15);
+            color: var(--highlight);
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+
+        /* --- TEXTOS E CONTEÚDO --- */
+        p { color: var(--text-muted); text-align: justify; margin-bottom: 15px; }
+
+        .context-highlight {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid var(--highlight);
+        }
+
+        /* --- GRID DE MÓDULOS (ESCOPO) --- */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.5);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .card h3 {
+            color: var(--highlight);
+            margin-top: 0;
+            display: flex; align-items: center; gap: 10px;
+            font-size: 1.1rem;
+        }
+        .card ul { padding-left: 20px; margin: 0; font-size: 0.9rem; color: var(--text-muted); }
+        .card li { margin-bottom: 8px; }
+
+        /* --- METODOLOGIA DETALHADA --- */
+        .method-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .method-box {
+            background: rgba(15, 23, 42, 0.6);
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .method-box h4 {
+            color: white;
+            margin: 0 0 10px 0;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .method-box i { color: var(--highlight); }
+        
+        .method-box p { font-size: 0.9rem; margin: 0; }
+        .status-badge {
+            display: inline-block;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--highlight);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* --- LIMITAÇÕES (LISTA CLARA) --- */
+        .limitations-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            gap: 10px;
+        }
+        .limitations-list li {
+            background: rgba(248, 113, 113, 0.1); /* Fundo avermelhado bem leve */
+            padding: 12px 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(248, 113, 113, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #cbd5e1;
+            font-size: 0.95rem;
+        }
+        .limitations-list i { color: var(--danger); font-size: 1.1rem; }
+
+        /* --- PREÇO --- */
+        .price-card {
+            background: linear-gradient(160deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95));
+            border: 1px solid var(--highlight);
+            padding: 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(56, 189, 248, 0.1);
+        }
+        .price-card::before {
+            content: "";
+            position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+            background: var(--highlight);
+        }
+        .big-price {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: white;
+            margin: 15px 0;
+            display: block;
+        }
+        .validity-badge {
+            background: rgba(255,255,255,0.1);
+            color: var(--highlight);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .conditions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+            text-align: left;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+        }
+        .condition-item strong { display: block; color: white; margin-bottom: 4px; font-size: 0.9rem;}
+        .condition-item span { font-size: 0.85rem; color: var(--text-muted); }
+
+        /* --- RODAPÉ PROFISSIONAL --- */
+        footer {
+            margin-top: 80px;
+            border-top: 1px solid var(--glass-border);
+            padding-top: 40px;
+        }
+
+        .profile-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            background: rgba(255,255,255,0.03);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid var(--glass-border);
+        }
+
+        .profile-info h3 { margin: 0; color: white; font-size: 1.2rem; }
+        .profile-info p { margin: 5px 0 0 0; color: var(--highlight); font-size: 0.9rem; font-weight: 500;}
+        .profile-info span { font-size: 0.85rem; color: var(--text-muted); display: block; margin-top: 5px; }
+
+        .whatsapp-btn {
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+        .whatsapp-btn:hover { transform: scale(1.05); background-color: #20bd5a; }
+
+        /* --- MOBILE --- */
+        @media (max-width: 768px) {
+            .main-wrapper { padding: 25px; margin: 0; border-radius: 0; border: none; }
+            h1 { font-size: 1.6rem; }
+            .method-container { grid-template-columns: 1fr; }
+            .profile-card { flex-direction: column; text-align: center; }
+            .section-title { flex-direction: column; align-items: flex-start; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        <header>
+            <span class="brand">Eon Tecnologia</span>
+            <h1>Proposta de Inovação & Tecnologia</h1>
+            
+            <div class="info-tags">
+                <div class="tag"><i class="fa-solid fa-school"></i> Escola Terra Brasil</div>
+                <div class="tag"><i class="fa-solid fa-calendar"></i> 13 Jan 2026</div>
+            </div>
+        </header>
+
+        <section>
+            <div class="section-title">
+                <div class="icon-box"><i class="fa-solid fa-rocket"></i></div>
+                <h2>Apresentação e Contexto</h2>
+            </div>
+            <p>A Escola Terra Brasil vive um momento importante de crescimento. Esse movimento exige a modernização de processos, redução de atividades manuais e fortalecimento da gestão de dados.</p>
+            <p>Esta proposta visa estabelecer uma parceria estratégica (CTO as a Service) para apoiar a escola em:</p>
+            
+            <div style="background: var(--card-bg); padding: 20px; border-radius: 10px; border: 1px solid var(--glass-border);">
+                <ul class="highlight-list">
+                    <li>Estruturar e profissionalizar a gestão de dados;</li>
+                    <li>Aumentar a segurança da informação;</li>
+                    <li>Automatizar processos repetitivos;</li>
+                    <li>Criar uma base tecnológica sólida para expansão.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">
+                <div class="icon-box"><i class="fa-solid fa-laptop-code"></i></div>
+                <h2>Escopo de Trabalho</h2>
+            </div>
+            
+            <div class="modules-grid">
+                <div class="card">
+                    <h3><i class="fa-solid fa-address-card"></i> Secretaria Digital</h3>
+                    <ul>
+                        <li><strong>Migração de Dados:</strong> Planilhas para Banco de Dados.</li>
+                        <li><strong>Cadastro Único:</strong> Centralização de alunos.</li>
+                        <li><strong>Automação:</strong> Contratos e documentos.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fa-solid fa-id-badge"></i> Totem & Acesso</h3>
+                    <ul>
+                        <li><strong>Interface:</strong> Software de presença.</li>
+                        <li><strong>Fluxo:</strong> Controle de entrada/saída.</li>
+                        <li><strong>Relatórios:</strong> Dados em tempo real.</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3><i class="fa-solid fa-boxes-stacked"></i> Gestão de Estoque</h3>
+                    <ul>
+                        <li><strong>Fluxo:</strong> Entrada/saída de insumos.</li>
+                        <li><strong>Alertas:</strong> Avisos de reposição.</li>
+                        <li><strong>Compras:</strong> Relatórios financeiros.</li>
+                    </ul>
+                </div>
+
+                <div class="card" style="border-color: var(--highlight);">
+                    <h3><i class="fa-solid fa-brain"></i> Consultoria de TI</h3>
+                    <ul>
+                        <li>Curadoria de softwares terceiros.</li>
+                        <li>Planejamento estratégico periódico.</li>
+                        <li>Monitoramento de Backup.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">
+                <div class="icon-box"><i class="fa-solid fa-handshake"></i></div>
+                <h2>Metodologia de Trabalho</h2>
+            </div>
+            <p>Para garantir organização, clareza e continuidade sem interferir na rotina escolar:</p>
+            
+            <div class="method-container">
+                <div class="method-box">
+                    <h4><i class="fa-solid fa-house-laptop"></i> Atuação Híbrida</h4>
+                    <p>O desenvolvimento é feito remotamente para garantir agilidade. As reuniões de alinhamento presenciais são agendadas <strong>preferencialmente após às 17h30</strong>, respeitando a rotina pedagógica.</p>
+                </div>
+                
+                <div class="method-box">
+                    <h4><i class="fa-solid fa-list-check"></i> Comunicação e Prazos</h4>
+                    <p>Contato direto via WhatsApp/E-mail. As demandas seguem uma fila de prioridades transparente:</p>
+                    <div class="status-badge">Planejado > Em Andamento > Concluído</div>
+                </div>
+
+                <div class="method-box" style="grid-column: 1 / -1;">
+                    <h4><i class="fa-solid fa-unlock-keyhole"></i> Propriedade Intelectual</h4>
+                    <p>Segurança jurídica total: A Escola Terra Brasil recebe uma <strong>Licença de Uso Perpétua, Irrestrita e Intransferível</strong>. Mesmo se o contrato encerrar, vocês continuam utilizando o sistema sem custos extras.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="section-title">
+                <div class="icon-box" style="border-color: var(--danger); color: var(--danger); background: rgba(248, 113, 113, 0.1);"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <h2>Não Incluso (Limitações do Escopo)</h2>
+            </div>
+            <p>Para garantir o foco na entrega estratégica de software, os seguintes itens operacionais devem ser tratados pelo suporte técnico local:</p>
+
+            <ul class="limitations-list">
+                <li>
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    <div><strong>Manutenção Física:</strong> Conserto de computadores, impressoras e troca de peças.</div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-network-wired"></i>
+                    <div><strong>Infraestrutura:</strong> Passagem de cabos de rede, elétrica e instalação física de roteadores.</div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <div><strong>Aquisição de Hardware:</strong> Custos de compra de leitores, computadores ou licenças terceiras.</div>
+                </li>
+                <li>
+                    <i class="fa-solid fa-user-gear"></i>
+                    <div><strong>Suporte Nível 1:</strong> Dúvidas básicas (uso do Windows, senhas de e-mail pessoal, etc).</div>
+                </li>
+            </ul>
+        </section>
+
+          <section>
+            <div class="section-title">
+                <div class="icon-box"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+                <h2>Investimento</h2>
+            </div>
+
+            <p>Considerando o escopo proposto — que reúne desenvolvimento de múltiplos sistemas sob medida e consultoria estratégica "CTO as a Service" — um projeto dessa natureza costuma ser enquadrado no mercado em faixas superiores a <strong>R$ 4.000,00 mensais</strong>.</p>
+            <p>No entanto, em respeito à parceria e visão de longo prazo, apresentamos a seguinte condição:</p>
+
+            <div class="price-card">
+                <span class="validity-badge">Proposta válida por 10 dias</span>
+                <span style="display:block; text-transform:uppercase; letter-spacing:2px; font-size:0.9rem; color:var(--highlight);">Honorários Mensais</span>
+                
+                <span class="big-price">R$ 2.800,00</span>
+                <span style="color: var(--text-muted);">Contrato PJ • Sem encargos trabalhistas</span>
+
+                <div class="conditions-grid">
+                    <div class="condition-item">
+                        <strong><i class="fa-regular fa-clock"></i> Vigência</strong>
+                        <span>12 meses (renovação automática)</span>
+                    </div>
+                    <div class="condition-item">
+                        <strong><i class="fa-solid fa-calendar-check"></i> Vencimento</strong>
+                        <span>Todo dia 10 (Boleto ou PIX)</span>
+                    </div>
+                    <div class="condition-item">
+                        <strong><i class="fa-solid fa-ban"></i> Cancelamento</strong>
+                        <span>Aviso prévio de 30 dias</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="profile-card">
+                <div class="profile-info">
+                    <h3>Gustavo de Santana</h3>
+                    <p>Consultor de Tecnologia e Processos</p>
+                    <span>Eon Tecnologia • gssantos.dev@gmail.com</span>
+                </div>
+                
+                <a href="https://wa.me/5511956403807" class="whatsapp-btn" target="_blank">
+                    <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
+                    Falar no WhatsApp
+                </a>
+            </div>
+            <p style="text-align: center; margin-top: 30px; opacity: 0.5; font-size: 0.8rem;">
+                &copy; 2026 Eon Tecnologia. Todos os direitos reservados.
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
